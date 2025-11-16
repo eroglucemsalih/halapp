@@ -1,0 +1,16 @@
+name: hal_mobile_flutter
+description: Hal fiyatları mobil uygulama örneği
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.0
+  geolocator: ^9.0.2
+  google_mobile_ads: ^2.3.0
+
+flutter:
+  uses-material-design: true

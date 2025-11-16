@@ -1,0 +1,140 @@
+2025-11-14 13:47:50,870 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 13:47:50,871 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 13:47:50,871 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 13:47:51,244 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 13:47:51,245 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 13:47:51,516 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 13:47:51,517 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 13:47:51,518 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 13:47:51,526 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 13:47:51,536 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 13:47:51,632 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 13:47:51,652 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 13:47:51,679 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 13:47:51,679 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:02:06,323 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:02:06,324 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:02:06,324 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:02:06,994 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:02:06,994 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:02:07,158 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:02:07,159 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:02:07,159 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:02:07,166 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:02:07,174 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:02:07,266 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:02:07,286 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:02:07,310 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:02:07,311 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:12:12,491 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:12:12,491 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:12:12,491 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:12:12,796 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:12:12,797 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:12:13,201 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:12:13,201 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:12:13,202 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:12:13,209 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:12:13,217 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:12:13,307 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:12:13,327 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:12:13,352 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:12:13,352 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:13:37,776 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:13:37,777 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:13:37,778 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:13:38,087 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:13:38,088 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:13:38,248 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:13:38,249 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:13:38,250 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:13:38,258 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:13:38,267 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:13:38,372 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:13:38,392 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:13:38,420 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:13:38,420 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:15:08,454 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:15:08,454 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:15:08,455 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:15:08,781 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:15:08,781 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:15:08,916 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:15:08,916 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:15:08,917 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:15:08,924 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:15:08,935 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:15:09,035 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:15:09,056 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:15:09,083 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:15:09,083 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:15:59,597 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:15:59,597 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:15:59,598 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:16:00,284 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:16:00,285 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:16:00,457 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:16:00,458 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:16:00,458 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:16:00,465 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:16:00,475 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:16:00,565 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:16:00,587 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:16:00,613 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:16:00,613 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:16:46,422 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:16:46,423 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:16:46,423 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:16:47,038 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:16:47,038 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:16:47,205 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:16:47,206 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:16:47,207 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:16:47,214 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:16:47,223 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:16:47,317 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:16:47,337 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:16:47,366 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:16:47,366 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:21:32,936 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:21:32,937 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:21:32,937 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:21:33,647 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:21:33,647 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:21:33,842 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:21:33,842 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:21:33,843 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:21:33,850 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:21:33,857 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:21:33,947 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:21:33,966 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:21:33,992 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:21:33,992 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:23:10,596 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:23:10,597 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:23:10,597 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:23:10,969 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:23:10,969 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:23:11,104 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:23:11,105 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:23:11,105 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:23:11,112 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:23:11,121 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:23:11,215 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:23:11,236 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:23:11,262 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:23:11,262 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
+2025-11-14 14:23:45,467 - INFO - [Gazipaþa] 'C:\Users\Cem\Desktop\hal_backend\kategoriler.xlsx' baþarýyla yüklendi. Ýçinde 113 kural bulundu.
+2025-11-14 14:23:45,467 - INFO - [Gazipaþa] Görev baþladý, veriler çekiliyor...
+2025-11-14 14:23:45,467 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/gunluk-hal-fiyatlari
+2025-11-14 14:23:45,975 - INFO - [Gazipaþa] Dinamik link bulundu: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:23:45,976 - INFO - [Gazipaþa] Fetch denemesi: https://gazipasa.bel.tr/14112025-hal-fiyatlari
+2025-11-14 14:23:46,261 - INFO - [Gazipaþa] 2 tablo bulundu
+2025-11-14 14:23:46,261 - INFO - [Gazipaþa] Ana veri tablosu ('TOPTANCI HAL...') [kaynak: 3] bulundu.
+2025-11-14 14:23:46,262 - INFO - [Gazipaþa] Son 'ÜRÜN ADI' parçasý (Dernek Tablosu) 36 satýrla ayrýldý.
+2025-11-14 14:23:46,268 - INFO - [Gazipaþa] Grup sütunu oluþturuldu.
+2025-11-14 14:23:46,276 - INFO - [Gazipaþa] 3 satýrta >=3 'veri yok' bulundu; bu satýrlar siliniyor.
+2025-11-14 14:23:46,369 - INFO - [Gazipaþa] 'Dernek' tablosu baþarýyla iþlendi. 26 temiz ürün bulundu.
+2025-11-14 14:23:46,388 - INFO - [Gazipaþa] 'Hal_Fiyatlari' sayfasý için stiller uygulandý.
+2025-11-14 14:23:46,413 - INFO - [Gazipaþa] Son baþarýlý veri cache'lendi
+2025-11-14 14:23:46,413 - INFO - [Gazipaþa] Veriler baþarýyla 'gazipasa_hal_fiyatlari.xlsx' dosyasýna kaydedildi
