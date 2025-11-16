@@ -77,22 +77,35 @@ jobs:
             fi
           fi
 
-      - name: Ensure minSdkVersion >= 19
+      - name: Ensure minSdkVersion >= 19 and remove uses-sdk
         working-directory: mobile-flutter
         run: |
           set -e
           FILE=android/app/build.gradle
+          MANIFEST=android/app/src/main/AndroidManifest.xml
           if [ -f "$FILE" ]; then
-            # Replace any minSdkVersion number with 19
+            # Replace any minSdkVersion number with 19 in build.gradle
             sed -i -E "s/minSdkVersion[[:space:]]+[0-9]+/minSdkVersion 19/g" "$FILE" || true
-            # If manifest contains uses-sdk with a lower min, update it as well
-            if [ -f android/app/src/main/AndroidManifest.xml ]; then
-              sed -i -E "s/uses-sdk[^>]*android:minSdkVersion=\"[0-9]+\"/uses-sdk tools:node=\"remove\"/g" android/app/src/main/AndroidManifest.xml || true
-            fi
             echo "Patched $FILE to require minSdkVersion 19"
             grep -n "minSdkVersion" "$FILE" || true
           else
             echo "$FILE not found, skipping minSdk patch"
+          fi
+
+          if [ -f "$MANIFEST" ]; then
+            echo "--- Manifest before patch ---"
+            sed -n '1,200p' "$MANIFEST" || true
+            # Ensure tools namespace exists on the <manifest> tag
+            if ! grep -q 'xmlns:tools' "$MANIFEST"; then
+              sed -i -E "s#<manifest([^>]*)>#<manifest\1 xmlns:tools=\"http://schemas.android.com/tools\">#" "$MANIFEST" || true
+            fi
+            # Aggressively remove any <uses-sdk ...> tag (single- or multi-line) using perl
+            perl -0777 -i -pe "s#<uses-sdk\b.*?/?>##isg" "$MANIFEST" || true
+            echo "--- Manifest after patch ---"
+            sed -n '1,200p' "$MANIFEST" || true
+            echo "Cleaned $MANIFEST (removed uses-sdk if present)"
+          else
+            echo "$MANIFEST not found, skipping manifest patch"
           fi
 
       - name: Install dependencies (flutter pub get)
