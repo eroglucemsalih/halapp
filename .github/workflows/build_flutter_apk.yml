@@ -115,6 +115,26 @@ jobs:
         working-directory: mobile-flutter
         run: flutter pub get
 
+      - name: Debug: environment and Android files
+        working-directory: mobile-flutter
+        run: |
+          set -e
+          echo "-- java version --"
+          java -version || true
+          echo "-- flutter version --"
+          flutter --version || true
+          echo "-- android/app listing --"
+          ls -la android/app || true
+          echo "-- AndroidManifest.xml --"
+          sed -n '1,200p' android/app/src/main/AndroidManifest.xml || true
+          echo "-- build.gradle (app) --"
+          sed -n '1,200p' android/app/build.gradle || true
+          echo "-- gradlew version --"
+          if [ -f android/gradlew ]; then
+            chmod +x android/gradlew || true
+            android/gradlew --version || true
+          fi
+
       - name: Build release APK
         working-directory: mobile-flutter
         run: flutter build apk --release --no-shrink
