@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _initLocation();
     _bannerAd = BannerAd(
-      adUnitId: BannerAd.testAdUnitId,
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111', // official Google test banner ad unit id
       size: AdSize.banner,
       request: AdRequest(),
       listener: BannerAdListener(),
