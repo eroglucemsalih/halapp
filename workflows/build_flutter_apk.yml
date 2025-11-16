@@ -1,0 +1,41 @@
+name: Build Flutter APK (CI)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build-flutter-apk:
+    name: Build Flutter APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.6'
+
+      - name: Install Android SDK components
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends unzip xz-utils
+          yes | sdkmanager --licenses || true
+          sdkmanager --install "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+
+      - name: Show java version
+        run: java -version || true
+
+      - name: Install dependencies (flutter pub get)
+        working-directory: mobile-flutter
+        run: flutter pub get
+
+      - name: Build release APK
+        working-directory: mobile-flutter
+        run: flutter build apk --release --no-shrink
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-flutter-apk
+          path: mobile-flutter/build/app/outputs/flutter-apk/*.apk
