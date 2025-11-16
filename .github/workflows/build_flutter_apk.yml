@@ -47,8 +47,35 @@ jobs:
         working-directory: mobile-flutter
         run: |
           # Recreate missing/unsupported Android project files safely.
-          # This will NOT overwrite your Dart code or pubspec.yaml, but will recreate android/ and ios/ if missing.
-          flutter create . || true
+          # This tries to recreate a clean Android/iOS native project and preserve app-specific files.
+          # Create a temp Flutter project and copy its android/ into this project, preserving manifest, main activity and resources.
+          set -e
+          TMPDIR="$RUNNER_TEMP/flutter_new_proj"
+          rm -rf "$TMPDIR"
+          mkdir -p "$TMPDIR"
+          flutter create -t app "$TMPDIR" || true
+
+          # If an android folder exists in our project, back it up
+          if [ -d android ]; then
+            mv android android.bak || true
+          fi
+
+          # Copy clean android from temp project
+          cp -R "$TMPDIR/android" ./android
+
+          # Preserve app-specific files if they existed in backup
+          if [ -d android.bak ]; then
+            # Overwrite newly created AndroidManifest with original if present
+            if [ -f android.bak/app/src/main/AndroidManifest.xml ]; then
+              cp android.bak/app/src/main/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
+            fi
+            # Preserve MainActivity (kotlin/java) if present
+            find android.bak/app/src -type f -name "*MainActivity.*" -exec bash -c 'mkdir -p "$(dirname "../android/app/src/${0#android.bak/app/src/}")"; cp "$0" "../android/app/src/${0#android.bak/app/src/}"' {} \;
+            # Preserve resources (res) if present
+            if [ -d android.bak/app/src/main/res ]; then
+              cp -R android.bak/app/src/main/res/* android/app/src/main/res/ || true
+            fi
+          fi
 
       - name: Install dependencies (flutter pub get)
         working-directory: mobile-flutter
