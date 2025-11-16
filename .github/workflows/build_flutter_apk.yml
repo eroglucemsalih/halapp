@@ -43,6 +43,13 @@ jobs:
       - name: Show java version
         run: java -version || true
 
+      - name: Regenerate Flutter project files (if needed)
+        working-directory: mobile-flutter
+        run: |
+          # Recreate missing/unsupported Android project files safely.
+          # This will NOT overwrite your Dart code or pubspec.yaml, but will recreate android/ and ios/ if missing.
+          flutter create . || true
+
       - name: Install dependencies (flutter pub get)
         working-directory: mobile-flutter
         run: flutter pub get
