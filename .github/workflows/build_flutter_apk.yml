@@ -19,6 +19,12 @@ jobs:
         with:
           flutter-version: '3.10.6'
 
+      - name: Set up JDK 17 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Install Android SDK command-line tools and components
         run: |
           set -e
@@ -135,12 +141,18 @@ jobs:
             android/gradlew --version || true
           fi
 
-      - name: Build release APK
+      - name: Build release APK (capture logs)
         working-directory: mobile-flutter
-        run: flutter build apk --release --no-shrink
+        run: |
+          set -euo pipefail
+          echo "Starting flutter build (logs will be saved to build_log.txt)"
+          flutter build apk --release --no-shrink 2>&1 | tee build_log.txt
 
-      - name: Upload APK artifact
+      - name: Upload APK and logs (always)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: mobile-flutter-apk
-          path: mobile-flutter/build/app/outputs/flutter-apk/*.apk
+          name: mobile-flutter-apk-and-logs
+          path: |
+            mobile-flutter/build/app/outputs/flutter-apk/*.apk
+            mobile-flutter/build_log.txt
