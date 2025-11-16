@@ -157,23 +157,23 @@ jobs:
             mobile-flutter/build/app/outputs/flutter-apk/*.apk
             mobile-flutter/build_log.txt
 
-      - name: Commit build log back to repo (skip CI)
+      - name: Upload build log to repository via GitHub API (skip CI)
         if: always()
-        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -e
-          # Only commit if build_log.txt exists
+          set -euo pipefail
           LOGFILE="mobile-flutter/build_log.txt"
           if [ -f "$LOGFILE" ]; then
             mkdir -p build_outputs/ci_logs
             SHA=${{ github.sha }}
-            OUTFILE="build_outputs/ci_logs/build_log_${SHA}.txt"
-            cp "$LOGFILE" "$OUTFILE"
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "$OUTFILE" || true
-            git commit -m "ci: add build log for ${SHA} [skip ci]" || true
-            git push origin HEAD:main || true
+            OUTPATH="build_outputs/ci_logs/build_log_${SHA}.txt"
+            echo "Preparing to upload $OUTPATH via API"
+            CONTENT_B64=$(base64 -w 0 "$LOGFILE")
+            API_URL="https://api.github.com/repos/${{ github.repository }}/contents/${OUTPATH}"
+            PAYLOAD=$(printf '{"message":"ci: add build log for %s [skip ci]","content":"%s","branch":"main"}' "$SHA" "$CONTENT_B64")
+            echo "Calling GitHub API to create/update file"
+            curl -s -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" -H "Content-Type: application/json" -d "$PAYLOAD" "$API_URL" || true
           else
-            echo "No build_log.txt found, skipping commit"
+            echo "No build_log.txt found, skipping API upload"
           fi
