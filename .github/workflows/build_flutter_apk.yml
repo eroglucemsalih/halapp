@@ -77,6 +77,24 @@ jobs:
             fi
           fi
 
+      - name: Ensure minSdkVersion >= 19
+        working-directory: mobile-flutter
+        run: |
+          set -e
+          FILE=android/app/build.gradle
+          if [ -f "$FILE" ]; then
+            # Replace any minSdkVersion number with 19
+            sed -i -E "s/minSdkVersion[[:space:]]+[0-9]+/minSdkVersion 19/g" "$FILE" || true
+            # If manifest contains uses-sdk with a lower min, update it as well
+            if [ -f android/app/src/main/AndroidManifest.xml ]; then
+              sed -i -E "s/uses-sdk[^>]*android:minSdkVersion=\"[0-9]+\"/uses-sdk tools:node=\"remove\"/g" android/app/src/main/AndroidManifest.xml || true
+            fi
+            echo "Patched $FILE to require minSdkVersion 19"
+            grep -n "minSdkVersion" "$FILE" || true
+          else
+            echo "$FILE not found, skipping minSdk patch"
+          fi
+
       - name: Install dependencies (flutter pub get)
         working-directory: mobile-flutter
         run: flutter pub get
