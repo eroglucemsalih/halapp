@@ -16,25 +16,17 @@ jobs:
         with:
           flutter-version: '3.10.6'
 
-      - name: Install Android SDK components
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends unzip xz-utils
-          yes | sdkmanager --licenses || true
-          sdkmanager --install "platform-tools" "platforms;android-33" "build-tools;33.0.2"
-
       - name: Install Android SDK command-line tools and components
-        env:
-          ANDROID_SDK_ROOT: ${{ runner.home }}/android-sdk
         run: |
           set -e
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends unzip xz-utils wget
 
-          export ANDROID_SDK_ROOT="${{ runner.home }}/android-sdk"
+          # Use HOME-based SDK root so we don't need runner context expressions
+          ANDROID_SDK_ROOT="$HOME/android-sdk"
           mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
 
-          # Download commandline tools (latest) from Google and install under cmdline-tools/latest
+          # Download commandline tools and install under cmdline-tools/latest
           CLI_ZIP="$RUNNER_TEMP/cmdline-tools.zip"
           wget -qO "$CLI_ZIP" https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
           unzip -q "$CLI_ZIP" -d "$RUNNER_TEMP/cmdline-tools-temp"
