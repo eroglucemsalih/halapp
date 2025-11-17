@@ -2,11 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
   runApp(MyApp());
 }
 
@@ -35,18 +32,11 @@ class _HomePageState extends State<HomePage> {
   Map<String, dynamic>? nearest;
   List markets = [];
   Map<String, dynamic>? selectedMarket;
-  BannerAd? _bannerAd;
 
   @override
   void initState() {
     super.initState();
     _initLocation();
-    _bannerAd = BannerAd(
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111', // official Google test banner ad unit id
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(),
-    )..load();
   }
 
   Future<void> _initLocation() async {
@@ -98,7 +88,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    _bannerAd?.dispose();
     super.dispose();
   }
 
@@ -137,7 +126,7 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (ctx,i){ final item = selectedMarket!['rows'][i]; return ListTile(title: Text(item['product'] ?? item['Ürün Adı'] ?? ''), subtitle: Text('${item['price_min'] ?? item['En Düşük Fiyat (TL)']}')); }
           )),
 
-          if (_bannerAd != null) Container(height: 50, child: AdWidget(ad: _bannerAd!)),
+          // Ads removed for build/test: the ad container was here.
         ]),
       ),
     );
