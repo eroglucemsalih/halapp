@@ -7,7 +7,7 @@ void main() {
   runApp(MyApp());
 }
 
-const String BACKEND_URL = 'http://10.0.2.2:5000'; // change as needed
+const String BACKEND_URL = 'http://10.22.57.172:5000'; // device testing via phone hotspot
 
 class MyApp extends StatelessWidget {
   @override
