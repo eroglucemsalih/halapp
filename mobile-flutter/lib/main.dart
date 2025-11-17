@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
   Map<String, dynamic>? nearest;
   List markets = [];
   Map<String, dynamic>? selectedMarket;
+  String _debugLog = '';
 
   @override
   void initState() {
@@ -40,18 +41,30 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _initLocation() async {
-    LocationPermission permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
+    try {
+      _appendDebug('Checking location permission...');
+      LocationPermission permission = await Geolocator.checkPermission();
+      _appendDebug('Current permission: $permission');
+      if (permission == LocationPermission.denied) {
+        _appendDebug('Requesting permission...');
+        permission = await Geolocator.requestPermission();
+        _appendDebug('Permission after request: $permission');
+      }
+      if (permission == LocationPermission.deniedForever || permission == LocationPermission.denied) {
+        setState(() { _error = 'Location permission denied'; _loading=false; });
+        _appendDebug('Permission denied (forever or denied)');
+        return;
+      }
+      _appendDebug('Getting current position...');
+      Position pos = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      setState(() { _position = pos; });
+      _appendDebug('Got position: ${pos.latitude}, ${pos.longitude}');
+      await _fetchNearest(pos.latitude, pos.longitude);
+      setState(() { _loading = false; });
+    } catch (e, st) {
+      setState(() { _error = e.toString(); _loading = false; });
+      _appendDebug('Exception during _initLocation: $e\n$st');
     }
-    if (permission == LocationPermission.deniedForever || permission == LocationPermission.denied) {
-      setState(() { _error = 'Location permission denied'; _loading=false; });
-      return;
-    }
-    Position pos = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    setState(() { _position = pos; });
-    await _fetchNearest(pos.latitude, pos.longitude);
-    setState(() { _loading = false; });
   }
 
   Future<void> _fetchNearest(double lat, double lon) async {
@@ -76,6 +89,21 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  Future<void> _pingBackend() async {
+    try {
+      _appendDebug('Pinging backend...');
+      final res = await http.get(Uri.parse('$BACKEND_URL/api/markets')).timeout(Duration(seconds: 5));
+      _appendDebug('Ping status: ${res.statusCode}');
+      setState(() {});
+    } catch (e) {
+      _appendDebug('Ping failed: $e');
+    }
+  }
+
+  void _appendDebug(String msg) {
+    setState(() { _debugLog = '${DateTime.now().toIso8601String()} - $msg\n' + _debugLog; });
+  }
+
   Future<void> _fetchMarketLatest(String id) async {
     try {
       final res = await http.get(Uri.parse('$BACKEND_URL/api/market/$id/latest'));
@@ -98,6 +126,20 @@ class _HomePageState extends State<HomePage> {
       body: _loading ? Center(child: CircularProgressIndicator()) : Padding(
         padding: EdgeInsets.all(12),
         child: Column(children: [
+            // Debug header
+            if (_debugLog.isNotEmpty) Container(
+              color: Colors.black12,
+              padding: EdgeInsets.all(8),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text('Debug info (most recent first):', style: TextStyle(fontWeight: FontWeight.bold)),
+                Container(height: 80, child: SingleChildScrollView(child: Text(_debugLog, style: TextStyle(fontSize: 12))))
+              ])
+            ),
+            Row(children: [
+              ElevatedButton(onPressed: _pingBackend, child: Text('Ping backend')),
+              SizedBox(width:8),
+              ElevatedButton(onPressed: _fetchMarkets, child: Text('Listele')),
+            ]),
           if (_error != null) Text(_error!, style: TextStyle(color: Colors.red)),
           Text('Konum: ${_position?.latitude?.toStringAsFixed(6)} , ${_position?.longitude?.toStringAsFixed(6)}'),
           SizedBox(height:8),
