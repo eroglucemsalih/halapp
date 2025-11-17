@@ -125,7 +125,7 @@ jobs:
         working-directory: mobile-flutter
         run: flutter pub get
 
-      - name: Debug: environment and Android files
+      - name: "Debug: environment and Android files"
         working-directory: mobile-flutter
         run: |
           set -e
